@@ -2,20 +2,23 @@ module Data where
 
     import Graphics.Gloss.Interface.Pure.Game
 
-    width, height, offset :: Int
+    width, height, upOffset, leftOffset :: Int
     width = 600
     height = 400
-    offset = 100
+    upOffset = 150
+    leftOffset = 380
 
-    padWidth, padHeight, maxPadVel, ballRadius :: Float
+    padWidth, padHeight, maxPadVel, ballRadius, wallOffset :: Float
     padWidth = 15
     padHeight = 80
     maxPadVel = 700
     ballRadius = 8
+    wallOffset = 200
 
-    padColor, ballColor :: Color
+    padColor, ballColor, wallColor :: Color
     padColor = light blue
     ballColor = dark red   
+    wallColor = greyN 0.5
     
     data Object = Obj 
         { x :: Float, y :: Float

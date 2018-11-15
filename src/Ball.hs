@@ -18,3 +18,5 @@ module Ball where
             -- new values
             x' = x + vx * seconds
             y' = y + vy * seconds
+
+    
