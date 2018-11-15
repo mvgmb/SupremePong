@@ -1,0 +1,16 @@
+cabal: Entering directory '/tmp/cabal-tmp-29954/GLURaw-2.0.0.4'
+Configuring GLURaw-2.0.0.4...
+Building GLURaw-2.0.0.4...
+Preprocessing library GLURaw-2.0.0.4...
+[1 of 6] Compiling Graphics.GLU.TypesInternal ( src/Graphics/GLU/TypesInternal.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU/TypesInternal.o )
+[2 of 6] Compiling Graphics.GLU.Types ( src/Graphics/GLU/Types.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU/Types.o )
+[3 of 6] Compiling Graphics.GLU.Tokens ( src/Graphics/GLU/Tokens.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU/Tokens.o )
+[4 of 6] Compiling Graphics.GLU.Functions ( src/Graphics/GLU/Functions.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU/Functions.o )
+[5 of 6] Compiling Graphics.GLU.Callbacks ( src/Graphics/GLU/Callbacks.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU/Callbacks.o )
+[6 of 6] Compiling Graphics.GLU     ( src/Graphics/GLU.hs, dist/dist-sandbox-9fec84b8/build/Graphics/GLU.o )
+Creating package registration file:
+/tmp/pkgConf-GLURaw-2.0.011311762291653377373.4
+Installing library in
+/home/mario/git/SupremePong/.cabal-sandbox/lib/x86_64-linux-ghc-8.0.2/GLURaw-2.0.0.4-CYeJZCBBsRG4DmgOfz6PO5
+Registering GLURaw-2.0.0.4...
+cabal: Leaving directory '/tmp/cabal-tmp-29954/GLURaw-2.0.0.4'
