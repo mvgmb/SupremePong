@@ -7,23 +7,25 @@ module Data where
     height = 400
     offset = 100
 
-    padWidth, padHeight, ballRadius :: Float
+    padWidth, padHeight, maxPadVel, ballRadius :: Float
     padWidth = 15
     padHeight = 80
+    maxPadVel = 700
     ballRadius = 8
 
     padColor, ballColor :: Color
     padColor = light blue
     ballColor = dark red   
     
+    data Object = Obj 
+        { x :: Float, y :: Float
+        , vx :: Float, vy :: Float 
+        } deriving Show
+
     data PongGame = Game
-        { ballLoc :: (Float, Float)  
-        , ballVel :: (Float, Float)  
-        , p1Loc :: (Float, Float)
-        , p1Vel :: (Float, Float)          
-        , p2Loc :: (Float, Float) 
-        , p2Vel :: (Float, Float)
-        , padVel :: (Float, Float)
+        { ball :: Object
+        , p1 :: Object
+        , p2 :: Object
         } deriving Show 
         
     type Radius = Float 
@@ -31,12 +33,8 @@ module Data where
     
     initialState :: PongGame
     initialState = Game
-        { ballLoc = (0, 0)
-        , ballVel = (50, 0)
-        , p1Loc = (-260, 0)
-        , p1Vel = (0, 0)
-        , p2Loc = (260, 0)
-        , p2Vel = (0, 0)
-        , padVel = (0, 350)
+        { ball = (Obj 0 0 50 0)
+        , p1 = (Obj (-260) 0 0 0)
+        , p2 = (Obj 260 0 0 0)
         }
     

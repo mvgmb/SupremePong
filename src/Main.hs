@@ -23,13 +23,13 @@ fps = 60
 -- Transforms the Game state into a Picture to be rendered
 render :: PongGame -> Picture
 render game =
-    pictures [ ball game
-             , mkPaddle px1 py1
-             , mkPaddle px2 py2
+    pictures [ mkBall game
+             , mkPaddle x1 y1
+             , mkPaddle x2 y2
              ]
         where
-            (px1, py1) = p1Loc game
-            (px2, py2) = p2Loc game
+            (Obj x1 y1 _ _) = p1 game
+            (Obj x2 y2 _ _) = p2 game
 
 update :: Float -> PongGame -> PongGame
 update seconds game = movePaddles seconds $ moveBall seconds game
