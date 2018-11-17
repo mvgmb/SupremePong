@@ -1,11 +1,8 @@
 module Events where
     
     import Data
-    import Graphics.Gloss.Interface.Pure.Game
-    import Control.Concurrent
     import Control.Concurrent.MVar
-    import Control.Concurrent.STM
-    import Control.Monad
+    import Graphics.Gloss.Interface.Pure.Game
 
     events :: Event -> (PongGame, Control, Control) -> IO (PongGame, Control, Control)
     -- KEYDOWN events

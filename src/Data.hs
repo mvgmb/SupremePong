@@ -1,6 +1,5 @@
 module Data where 
 
-    import Control.Concurrent
     import Control.Concurrent.MVar
     import Graphics.Gloss.Interface.Pure.Game
 

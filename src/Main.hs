@@ -1,7 +1,4 @@
-import Control.Concurrent
 import Control.Concurrent.MVar
-import Control.Concurrent.STM
-import Control.Monad
 
 import Graphics.Gloss
 import Graphics.Gloss.Data.ViewPort

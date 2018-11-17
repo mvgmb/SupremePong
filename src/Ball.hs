@@ -2,8 +2,6 @@ module Ball where
 
     import Data
     import Graphics.Gloss.Interface.Pure.Game
-    import Control.Concurrent
-    import Control.Concurrent.MVar
 
     mkBall :: PongGame -> Picture
     mkBall game = uncurry translate trans $ color ballColor $ circleSolid ballRadius
@@ -54,5 +52,3 @@ module Ball where
                     else if padCol
                         then (vy + vy * padInfluence)
                         else vy
-                
-                
