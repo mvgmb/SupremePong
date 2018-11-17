@@ -21,6 +21,13 @@
   (major1) == 1 && (major2) <  13 || \
   (major1) == 1 && (major2) == 13 && (minor) <= 0)
 
+/* package stm-2.5.0.0 */
+#define VERSION_stm "2.5.0.0"
+#define MIN_VERSION_stm(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  5 || \
+  (major1) == 2 && (major2) == 5 && (minor) <= 0)
+
 /* tool gcc-7 */
 #define TOOL_VERSION_gcc "7"
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
