@@ -30,9 +30,11 @@ render (game, _, _) = do
                         , mkPaddle x2 y2
                         , mkWall wallOffset
                         , mkWall (-wallOffset)
+                        , translate (-232) (-50) $ Color white $ Text (show p1Score ++ " - " ++ show p2Score)
                         ]
         (Obj x1 y1 _ _) = p1 game
         (Obj x2 y2 _ _) = p2 game
+        (p1Score, p2Score) = score game
 
 update :: Float -> (PongGame, Control, Control) -> IO (PongGame, Control, Control)
 update seconds (game, p1Control, p2Control) = return ( (ballBounce $ movePaddles seconds $ moveBall seconds game), p1Control, p2Control )

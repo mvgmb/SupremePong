@@ -9,12 +9,13 @@ module Data where
     upOffset = 150
     leftOffset = 380
 
-    padWidth, padHeight, maxPadVel, padInfluence, ballRadius, wallOffset :: Float
+    padWidth, padHeight, maxPadVel, padInfluence, ballRadius, ballBaseSpeed, wallOffset :: Float
     padWidth = 15
     padHeight = 80
     maxPadVel = 700
     padInfluence = 0.10
     ballRadius = 8
+    ballBaseSpeed = 200
     wallOffset = 200
 
     padColor, ballColor, wallColor :: Color
@@ -31,6 +32,7 @@ module Data where
         { ball :: Object
         , p1 :: Object
         , p2 :: Object
+        , score :: (Integer, Integer)
         } deriving Show 
         
     type Radius = Float 
@@ -39,7 +41,8 @@ module Data where
 
     initialState :: PongGame
     initialState = Game 
-        { ball = (Obj 0 0 200 0)
+        { ball = (Obj 0 0 ballBaseSpeed ballBaseSpeed)
         , p1 = (Obj (-260) 0 0 0)
         , p2 = (Obj 260 0 0 0)
+        , score = (0, 0)
         }
