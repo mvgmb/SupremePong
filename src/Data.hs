@@ -17,6 +17,9 @@ module Data where
     ballRadius = 8
     ballBaseSpeed = 200
     wallOffset = 200
+    
+    maxScore :: Integer
+    maxScore = 6
 
     padColor, ballColor, wallColor :: Color
     padColor = light blue
@@ -33,6 +36,8 @@ module Data where
         , p1 :: Object
         , p2 :: Object
         , score :: (Integer, Integer)
+        , result :: Integer
+        , isOver :: Bool
         } deriving Show 
         
     type Radius = Float 
@@ -45,4 +50,6 @@ module Data where
         , p1 = (Obj (-260) 0 0 0)
         , p2 = (Obj 260 0 0 0)
         , score = (0, 0)
+        , result = 0
+        , isOver = False
         }

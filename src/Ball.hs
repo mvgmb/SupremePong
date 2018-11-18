@@ -42,24 +42,39 @@ module Ball where
         else 0
 
     ballBounce :: PongGame -> PongGame
-    ballBounce game = game { ball = (Obj x' y' vx' vy'), score = (p1Score',p2Score') }
+    ballBounce game = game { ball = (Obj x' y' vx' vy'), score = (p1Score',p2Score'), result = result', isOver = isOver' }
         where
                 (Obj x y vx vy) = ball game
                 (Obj x1 y1 _ _) = p1 game
                 (Obj x2 y2 _ _) = p2 game
                 (p1Score, p2Score) = score game   
+                
 
                 padCol = paddleCollision (x, y) y1 y2
                 wallCol = wallCollision (x, y)
                 points = point x
-
-                p1Score' = if points == 1
+                
+                p1Score' = if isOver game
+                    then p1Score
+                    else if points == 1
                     then (p1Score + 1)
                     else p1Score
                 
-                p2Score' = if points == 2
+                p2Score' = if isOver game
+                    then p2Score
+                    else if points == 2
                     then (p2Score + 1)
                     else p2Score
+
+                result' = if p1Score' == maxScore
+                        then 1
+                        else if p2Score' == maxScore
+                        then 2
+                        else 0
+                
+                isOver' = if result' /= 0
+                        then True
+                        else False
 
                 x' = if points /= 0
                     then 0

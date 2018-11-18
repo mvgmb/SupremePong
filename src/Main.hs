@@ -9,6 +9,7 @@ import Events
 import Ball
 import Paddle
 import Wall
+import Score
 
 window :: Display
 window = InWindow "Pong" (width, height) (leftOffset, upOffset)
@@ -30,7 +31,7 @@ render (game, _, _) = do
                         , mkPaddle x2 y2
                         , mkWall wallOffset
                         , mkWall (-wallOffset)
-                        , translate (-232) (-50) $ Color white $ Text (show p1Score ++ " - " ++ show p2Score)
+                        , mkScore p1Score p2Score (result game)
                         ]
         (Obj x1 y1 _ _) = p1 game
         (Obj x2 y2 _ _) = p2 game
