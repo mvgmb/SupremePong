@@ -49,7 +49,6 @@ module Ball where
                 (Obj x2 y2 _ _) = p2 game
                 (p1Score, p2Score) = score game   
                 
-
                 padCol = paddleCollision (x, y) y1 y2
                 wallCol = wallCollision (x, y)
                 points = point x
@@ -85,13 +84,13 @@ module Ball where
                     else y
                 
                 vx' = if points /= 0
-                    then ballBaseSpeed
+                    then ballBaseSpeed * fromInteger ((p1Score' - p1Score) + (p2Score - p2Score'))
                     else if padCol
                     then -(vx + vx * padInfluence)
                     else vx
 
                 vy' = if points /= 0
-                    then ballBaseSpeed
+                    then ballBaseSpeed - (ballBaseSpeed * fromInteger (p1Score' + p2Score') / 6) * 0.9
                     else if wallCol
                     then -vy
                     else if padCol

@@ -13,9 +13,9 @@ module Data where
     padWidth = 15
     padHeight = 80
     maxPadVel = 700
-    padInfluence = 0.10
+    padInfluence = 0.05
     ballRadius = 8
-    ballBaseSpeed = 200
+    ballBaseSpeed = 300
     wallOffset = 200
     
     maxScore :: Integer
