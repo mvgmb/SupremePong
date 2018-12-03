@@ -3,8 +3,8 @@ module Paddle where
     import Data
     import Graphics.Gloss.Interface.Pure.Game
 
-    mkPaddle :: Float -> Float -> Picture
-    mkPaddle x y = pictures
+    mkPaddle :: Float -> Float -> Float -> Picture
+    mkPaddle x y padHeight = pictures
         [ translate x y $ color padColor $ rectangleSolid padWidth padHeight]
 
 

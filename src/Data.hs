@@ -9,9 +9,8 @@ module Data where
     upOffset = 150
     leftOffset = 380
 
-    padWidth, padHeight, maxPadVel, padInfluence, ballRadius, ballBaseSpeed, wallOffset :: Float
+    padWidth, maxPadVel, padInfluence, ballRadius, ballBaseSpeed, wallOffset :: Float
     padWidth = 15
-    padHeight = 80
     maxPadVel = 700
     padInfluence = 0.05
     ballRadius = 8
@@ -32,24 +31,48 @@ module Data where
         } deriving Show
 
     data PongGame = Game
-        { ball :: Object
+        { ball_one :: Object
         , p1 :: Object
         , p2 :: Object
         , score :: (Integer, Integer)
         , result :: Integer
         , isOver :: Bool
+        , padHeight :: Float
         } deriving Show 
         
     type Radius = Float 
     type Position = (Float, Float) 
     type Control = MVar Integer
 
-    initialState :: PongGame
-    initialState = Game 
-        { ball = (Obj 0 0 ballBaseSpeed ballBaseSpeed)
+    levelOneState :: PongGame
+    levelOneState = Game 
+        { ball_one = (Obj 0 0 ballBaseSpeed ballBaseSpeed)
         , p1 = (Obj (-260) 0 0 0)
         , p2 = (Obj 260 0 0 0)
         , score = (0, 0)
         , result = 0
         , isOver = False
+        , padHeight = 80
+        }
+    
+    levelTwoState :: PongGame
+    levelTwoState = Game 
+        { ball_one = (Obj 0 0 ballBaseSpeed ballBaseSpeed)
+        , p1 = (Obj (-260) 0 0 0)
+        , p2 = (Obj 260 0 0 0)
+        , score = (0, 0)
+        , result = 0
+        , isOver = False
+        , padHeight = 60
+        }
+
+    levelThreeState :: PongGame
+    levelThreeState = Game 
+        { ball_one = (Obj 0 0 ballBaseSpeed ballBaseSpeed)
+        , p1 = (Obj (-260) 0 0 0)
+        , p2 = (Obj 260 0 0 0)
+        , score = (0, 0)
+        , result = 0
+        , isOver = False
+        , padHeight = 80
         }
