@@ -26,13 +26,16 @@ render :: (PongGame, Control, Control) -> IO Picture
 render (game, _, _) = do
     return(pics)    
     where 
-        pics = pictures [ mkBall game
+        pics = pictures [ mkBall bx1 by1
+                        , mkBall bx2 by2
                         , mkPaddle x1 y1 padH
                         , mkPaddle x2 y2 padH
                         , mkWall wallOffset
                         , mkWall (-wallOffset)
                         , mkScore p1Score p2Score (result game)
                         ]
+        (Obj bx1 by1 _ _) = ball_one game
+        (Obj bx2 by2 _ _) = ball_two game
         (Obj x1 y1 _ _) = p1 game
         (Obj x2 y2 _ _) = p2 game
         (p1Score, p2Score) = score game
