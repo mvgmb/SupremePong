@@ -32,13 +32,26 @@ module Events where
         return (game { p2 = (Obj x y 0 (-maxPadVel)) }, p1Control, p2Control)
         where (Obj x y vx vy) = p2 game
 
-    events (EventKey (Char '1') (Down) _ _) (game, p1Control, p2Control)= do
+        
+    events (EventKey (Char '1') (Down) _ _) (game, p1Control, p2Control) = do
+        c <- takeMVar p1Control
+        putMVar p1Control 0
+        c <- takeMVar p2Control
+        putMVar p2Control 0
         return (levelOneState, p1Control, p2Control)
     
-    events (EventKey (Char '2') (Down) _ _) (game, p1Control, p2Control)= do
+    events (EventKey (Char '2') (Down) _ _) (game, p1Control, p2Control) = do
+        c <- takeMVar p1Control
+        putMVar p1Control 0
+        c <- takeMVar p2Control
+        putMVar p2Control 0
         return (levelTwoState, p1Control, p2Control)
 
-    events (EventKey (Char '3') (Down) _ _) (game, p1Control, p2Control)= do
+    events (EventKey (Char '3') (Down) _ _) (game, p1Control, p2Control) = do
+        c <- takeMVar p1Control
+        putMVar p1Control 0
+        c <- takeMVar p2Control
+        putMVar p2Control 0
         return (levelThreeState, p1Control, p2Control)
 
     events (EventKey (SpecialKey KeySpace) _ _ _) (game, p1Control, p2Control) = do
